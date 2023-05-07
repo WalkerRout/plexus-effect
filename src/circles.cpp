@@ -38,11 +38,12 @@ auto Circles::create_circles_and_lines(void) -> void {
   circles.reserve(circle_count);
   for(uint32_t i = circle_count; i > 0; --i) {
     auto [width, height] = dimensions;
+    auto [vx, vy] = velocities;
 
     uint32_t x = rand() % width;
     uint32_t y = rand() % height;
-    double vel_x = rand_range(-std::get<0>(velocities), std::get<0>(velocities));
-    double vel_y = rand_range(-std::get<1>(velocities), std::get<1>(velocities));
+    double vel_x = rand_range(-vx, vx);
+    double vel_y = rand_range(-vy, vy);
 
     circles.emplace_back(CircleVector{x, y, vel_x, vel_y});
   }
