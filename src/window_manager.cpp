@@ -53,7 +53,7 @@ WindowManager::~WindowManager() {
 auto WindowManager::run(void) -> void {
   constexpr uint32_t FPS = 60;
   constexpr uint32_t CIRCLE_COUNT = 70;
-  constexpr double TUNING_PARAMETER = (double) FPS / 1000.0;
+  constexpr double TUNING_PARAMETER = 5 * (double) FPS / 1000.0;
 
   // generate circles
   auto [width, height] = dimensions;
