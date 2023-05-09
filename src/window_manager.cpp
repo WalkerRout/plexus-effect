@@ -24,8 +24,7 @@ WindowManager::WindowManager(uint32_t width, uint32_t height): dimensions({width
       SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 
       width, height, 
       DEFAULT_WINDOW_FLAGS
-    ), 
-    sdl2_destructor
+    )
   );
   if(window == nullptr) goto fail;
 
@@ -33,8 +32,7 @@ WindowManager::WindowManager(uint32_t width, uint32_t height): dimensions({width
     SDL_CreateRenderer(
       window.get(),
      -1, 0
-    ),
-    sdl2_destructor
+    )
   );
   if(renderer == nullptr) goto fail;
 
@@ -52,7 +50,7 @@ WindowManager::~WindowManager() {
 
 auto WindowManager::run(void) -> void {
   constexpr uint32_t FPS = 60;
-  constexpr uint32_t CIRCLE_COUNT = 70;
+  constexpr uint32_t CIRCLE_COUNT = 110;
   constexpr double TUNING_PARAMETER = 5 * (double) FPS / 1000.0;
 
   // generate circles
