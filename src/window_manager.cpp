@@ -95,15 +95,7 @@ auto WindowManager::run(void) -> void {
   }
 }
 
-auto WindowManager::free_resources(void) -> void {
-  window.reset();
-  renderer.reset();
-
-  window = nullptr;
-  renderer = nullptr;
-
-  SDL_Quit();
-}
+auto WindowManager::free_resources(void) -> void { SDL_Quit(); }
 
 }
 
