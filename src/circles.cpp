@@ -9,12 +9,12 @@
 
 #include "circles.h"
 
-static auto draw_circle(SDL_Renderer *renderer, uint32_t center_x, uint32_t center_y, uint32_t radius) -> void;
+static auto draw_circle(SDL_Renderer* renderer, uint32_t center_x, uint32_t center_y, uint32_t radius) -> void;
 static inline auto rand_range(double a, double b) -> double;
 
 namespace circles {
 
-Circles::Circles(uint32_t count, uint32_t width, uint32_t height) {
+Circles::Circles(uint16_t count, uint32_t width, uint32_t height) {
   circle_count = count;
   velocities = {VELOCITY, VELOCITY}; // x and y have same velocity range for now
   dimensions = {width, height};
@@ -27,7 +27,7 @@ auto Circles::step(double delta_time) -> void {
   connect_circles();
 }
 
-auto Circles::render(SDL_Renderer *renderer) -> void {
+auto Circles::render(SDL_Renderer* renderer) -> void {
   draw_lines(renderer);
   draw_circles(renderer);
 }
@@ -83,7 +83,7 @@ auto Circles::connect_circles(void) -> void {
   }
 }
 
-auto Circles::draw_lines(SDL_Renderer *renderer) -> void {
+auto Circles::draw_lines(SDL_Renderer* renderer) -> void {
   for(auto& line : lines) {
     // bind start and end positions
     auto [start_pos, end_pos] = line;
@@ -103,7 +103,7 @@ auto Circles::draw_lines(SDL_Renderer *renderer) -> void {
   }
 }
 
-inline auto Circles::draw_circles(SDL_Renderer *renderer) -> void {
+inline auto Circles::draw_circles(SDL_Renderer* renderer) -> void {
   for(auto& circle : circles) {
     auto [x, y, _dx, _dy] = circle;
 
@@ -122,7 +122,7 @@ inline auto Circles::color(double distance, double max_distance) const -> std::t
 // file local functions
 
 // Midpoint Circle Algorithm
-static auto draw_circle(SDL_Renderer *renderer, uint32_t center_x, uint32_t center_y, uint32_t radius) -> void {
+static auto draw_circle(SDL_Renderer* renderer, uint32_t center_x, uint32_t center_y, uint32_t radius) -> void {
    const int32_t diameter = (radius * 2);
 
    int32_t x = (radius - 1);

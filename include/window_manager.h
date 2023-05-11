@@ -12,8 +12,8 @@
 namespace window_manager {
 
 struct SDL2Destructor {
-  auto operator()(SDL_Window *w) const -> void;
-  auto operator()(SDL_Renderer *r) const -> void;
+  auto operator()(SDL_Window* w) const -> void;
+  auto operator()(SDL_Renderer* r) const -> void;
 };
 
 struct WindowManager {

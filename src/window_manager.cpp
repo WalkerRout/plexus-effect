@@ -8,8 +8,8 @@
 
 namespace window_manager {
 
-auto SDL2Destructor::operator()(SDL_Window *w)   const -> void { SDL_DestroyWindow(w); }
-auto SDL2Destructor::operator()(SDL_Renderer *r) const -> void { SDL_DestroyRenderer(r); }
+auto SDL2Destructor::operator()(SDL_Window* w)   const -> void { SDL_DestroyWindow(w); }
+auto SDL2Destructor::operator()(SDL_Renderer* r) const -> void { SDL_DestroyRenderer(r); }
 
 WindowManager::WindowManager(uint32_t width, uint32_t height): dimensions({width, height}) {
   const uint32_t DEFAULT_INIT_FLAGS = 0;
@@ -44,9 +44,7 @@ fail:
   throw std::runtime_error(error_msg + SDL_GetError());
 }
 
-WindowManager::~WindowManager() {
-  free_resources();
-}
+WindowManager::~WindowManager() { free_resources(); }
 
 auto WindowManager::run(void) -> void {
   constexpr uint32_t FPS = 60;

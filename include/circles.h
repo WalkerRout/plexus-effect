@@ -19,11 +19,11 @@ struct Circles {
   using LineVector = typename std::pair<SDL_Point, SDL_Point>;
 
   Circles() = delete;
-  Circles(uint32_t count, uint32_t width, uint32_t height);
+  Circles(uint16_t count, uint32_t width, uint32_t height);
 
 public:
   auto step(double delta_time) -> void;
-  auto render(SDL_Renderer *renderer) -> void;
+  auto render(SDL_Renderer* renderer) -> void;
 
 private:
   // Circles(uint32_t, uint32_t, uint32_t)
@@ -34,8 +34,8 @@ private:
   auto connect_circles(void) -> void;
 
   // render(SDL_Renderer *renderer)
-  auto draw_lines(SDL_Renderer *renderer) -> void;
-  auto draw_circles(SDL_Renderer *renderer) -> void;
+  auto draw_lines(SDL_Renderer* renderer) -> void;
+  auto draw_circles(SDL_Renderer* renderer) -> void;
 
   auto color(double distance, double max_distance) const -> std::tuple<uint8_t, uint8_t, uint8_t>;
 
