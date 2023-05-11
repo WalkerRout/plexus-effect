@@ -1,0 +1,2 @@
+/usr/bin/ar qc libplexus-effect_lib.a  CMakeFiles/plexus-effect_lib.dir/circles.cpp.o CMakeFiles/plexus-effect_lib.dir/main.cpp.o CMakeFiles/plexus-effect_lib.dir/window_manager.cpp.o
+/usr/bin/ranlib libplexus-effect_lib.a

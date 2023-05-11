@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/plexus-effect_run.dir/circles.cpp.o CMakeFiles/plexus-effect_run.dir/main.cpp.o CMakeFiles/plexus-effect_run.dir/window_manager.cpp.o  -o plexus-effect_run  -lSDL2 -lSDL2_image 

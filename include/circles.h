@@ -11,7 +11,7 @@ namespace circles {
 
 struct Circles {
   static constexpr double VELOCITY = 0.8;
-  static constexpr uint16_t MAX_DISTANCE = 200;
+  static constexpr uint16_t MAX_DISTANCE = 300;
 
   // x, y, dx, dy
   using CircleVector = typename std::tuple<double, double, double, double>;
